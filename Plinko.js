@@ -1,7 +1,7 @@
 class Plinko {
-    constructor(x,y ){
+    constructor(x,y){
         var ball_options ={
-            isStatic:false,
+            isStatic:true,
             restitution: 0.1 ,
             friction: 0.5,
             density: 3,
@@ -10,8 +10,8 @@ class Plinko {
         this.x = x;
         this.y = y;
          
+         
        this.body=Bodies.circle(x,y,10,ball_options);
-       this.color=color(random(0,255),random(0,255),random(0,255));
        World.add(world,this.body);
 
 
@@ -21,9 +21,9 @@ class Plinko {
        
         push()
         translate(pos.x,pos.y);
-        fill(this.color);
+        fill("white");
         ellipseMode(RADIUS);
-        ellipse (0,0, this.r,this.r );
+        ellipse (0,0, 10,10 );
        pop()
     }
 
